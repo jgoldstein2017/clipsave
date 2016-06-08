@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h2><%= @category.name %> <a href="/themes/<%= @category.theme.id %>">(<%= @category.theme.title %>)</a></h2>
+</div>
+
+<ul class="list-unstyled">
+  <% @category.clips.each do |clip| %>
+    <li>
+      <h3><a href="/clips/<%= clip.id %>"><%= clip.title %></a></h3>
+    </li>
+  <% end %>
+</ul>
+
+<div class="row">
+  <div class="col-md-12">
+
+    <div class="btn-group btn-group-justified">
+      <a href="/categories" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/categories/<%= @category.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_category/<%= @category.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="page-header">
+  <h2><%= @theme.title %></h2>
+</div>
+
+<ul class="list-unstyled">
+  <% @theme.categories.each do |category| %>
+    <li>
+      <h3><a href="/categories/<%= category.id %>"><%= category.name %></a></h3>
+    </li>
+  <% end %>
+</ul>
+
+<div class="btn-group btn-group-justified">
+  <a href="/themes" class="btn btn-primary">
+    Back
+  </a>
+  <a href="/themes/<%= @theme.id %>/edit" class="btn btn-warning">
+    Edit
+  </a>
+  <a href="/delete_theme/<%= @theme.id %>" class="btn btn-danger" rel="nofollow">
+    Delete
+  </a>
+</div>

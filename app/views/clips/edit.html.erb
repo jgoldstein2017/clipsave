@@ -1,0 +1,100 @@
+<!-- Validation failure messages -->
+<% if @clip.errors.any? %>
+  <% @clip.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Clip #<%= @clip.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_clip/<%= @clip.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for imbed -->
+      <div class="form-group">
+        <label for="imbed" class="control-label">
+          Imbed
+        </label>
+
+        <input type="text" id="imbed" name="imbed" placeholder="Imbed" class="form-control" value="<%= @clip.imbed %>">
+      </div>
+
+      <!-- Label and input for private -->
+      <div class="checkbox">
+        <label for="private">
+          <input type="checkbox" id="private" name="private" value="1" <%= "checked" if @clip.private %>>
+          Private
+        </label>
+      </div>
+
+      <!-- Label and input for rating -->
+      <div class="form-group">
+        <label for="rating" class="control-label">
+          Rating
+        </label>
+
+        <input type="text" id="rating" name="rating" placeholder="Rating" class="form-control" value="<%= @clip.rating %>">
+      </div>
+
+      <!-- Label and input for source -->
+      <div class="form-group">
+        <label for="source" class="control-label">
+          Source
+        </label>
+
+        <input type="text" id="source" name="source" placeholder="Source" class="form-control" value="<%= @clip.source %>">
+      </div>
+
+      <!-- Label and input for title -->
+      <div class="form-group">
+        <label for="title" class="control-label">
+          Title
+        </label>
+
+        <input type="text" id="title" name="title" placeholder="Title" class="form-control" value="<%= @clip.title %>">
+      </div>
+
+      <!-- Label and input for notes -->
+      <div class="form-group">
+        <label for="notes" class="control-label">
+          Notes
+        </label>
+
+        <textarea id="notes" name="notes" placeholder="Notes" class="form-control" rows="3"><%= @clip.notes %></textarea>
+      </div>
+
+      <!-- Label and input for address_id -->
+      <div class="form-group">
+        <label for="address_id" class="control-label">
+          Address
+        </label>
+
+        <input type="text" id="address_id" name="address_id" placeholder="Address" class="form-control" value="<%= @clip.address_id %>">
+      </div>
+
+      <!-- Label and input for category_id -->
+      <div class="form-group">
+        <label for="category_id" class="control-label">
+          Category
+        </label>
+
+        <input type="text" id="category_id" name="category_id" placeholder="Category" class="form-control" value="<%= @clip.category_id %>">
+        
+      </div>
+
+      <button class="btn btn-warning">
+        Update Clip
+      </button>
+      or
+      <a href="/clips/<%= @clip.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
