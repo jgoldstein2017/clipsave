@@ -13,17 +13,19 @@
         <th>Theme</th>
         <th>Actions</th>
       </tr>
-
+      <% @theme = 1 %>
       <% @categories.each do |category| %>
-      <tr>
-        <td><%= category.name %></td>
-        <td><%= category.theme.title %></td>
-        <td>
-          <a href="/categories/<%= category.id %>" class="btn btn-primary">Show</a>
-          <a href="/categories/<%= category.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_category/<%= category.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
-        </td>
-      </tr>
+        <% if @theme == 1 %>
+          <tr>
+            <td><%= category.name %></td>
+            <td><%= category.theme.title %></td>
+            <td>
+              <a href="/categories/<%= category.id %>" class="btn btn-primary">Show</a>
+              <a href="/categories/<%= category.id %>/edit" class="btn btn-warning">Edit</a>
+              <a href="/delete_category/<%= category.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+            </td>
+          </tr>
+          <% end %>
       <% end %>
     </table>
   </div>

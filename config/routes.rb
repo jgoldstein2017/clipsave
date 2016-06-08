@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   post "/create_category", :controller => "categories", :action => "create"
 
   # READ
-  get "/categories", :controller => "categories", :action => "index"
+  get "/categories/", :controller => "categories", :action => "index"
   get "/categories/:id", :controller => "categories", :action => "show"
 
   # UPDATE

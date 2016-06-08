@@ -5,5 +5,6 @@ class Viewer < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :favorites
-  belongs_to :clip
+  # belongs_to :clip
+  has_many :clips
 end

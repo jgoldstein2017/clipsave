@@ -1,5 +1,6 @@
 class ClipsController < ApplicationController
   def index
+    # @clips = current_viewer.clips
     @clips = Clip.all
   end
 

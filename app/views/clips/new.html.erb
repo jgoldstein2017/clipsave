@@ -27,6 +27,15 @@
         <input type="text" id="imbed" name="imbed" placeholder="Copy full Navbar" class="form-control" value="<%= @clip.imbed %>">
       </div>
 
+      <!-- Label and input for title -->
+      <div class="form-group">
+        <label for="title" class="control-label">
+          Title
+        </label>
+
+        <input type="text" id="title" name="title" placeholder="Title" class="form-control" value="<%= @clip.title %>">
+      </div>
+
       <!-- Label and input for private -->
       <div class="checkbox">
         <label for="private">
@@ -53,15 +62,6 @@
         <input type="text" id="source" name="source" placeholder="Source" class="form-control" value="<%= @clip.source %>">
       </div>
 
-      <!-- Label and input for title -->
-      <div class="form-group">
-        <label for="title" class="control-label">
-          Title
-        </label>
-
-        <input type="text" id="title" name="title" placeholder="Title" class="form-control" value="<%= @clip.title %>">
-      </div>
-
       <!-- Label and input for notes -->
       <div class="form-group">
         <label for="notes" class="control-label">
@@ -69,15 +69,6 @@
         </label>
 
         <textarea id="notes" name="notes" placeholder="Notes" class="form-control" rows="3"><%= @clip.notes %></textarea>
-      </div>
-
-      <!-- Label and input for address_id -->
-      <div class="form-group">
-        <label for="address_id" class="control-label">
-          Address
-        </label>
-
-        <input type="text" id="address_id" name="address_id" placeholder="Address" class="form-control" value="<%= @clip.address_id %>">
       </div>
 
       <!-- Label and input for category_id -->
