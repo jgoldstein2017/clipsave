@@ -13,9 +13,7 @@
         <th>Theme</th>
         <th>Actions</th>
       </tr>
-      <% @theme = 1 %>
       <% @categories.each do |category| %>
-        <% if @theme == 1 %>
           <tr>
             <td><%= category.name %></td>
             <td><%= category.theme.title %></td>
@@ -25,7 +23,6 @@
               <a href="/delete_category/<%= category.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
             </td>
           </tr>
-          <% end %>
       <% end %>
     </table>
   </div>
