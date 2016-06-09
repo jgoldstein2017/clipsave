@@ -27,6 +27,8 @@
         <input type="text" id="imbed" name="imbed" placeholder="Copy full Navbar" class="form-control" value="<%= @clip.imbed %>">
       </div>
 
+      <input type="hidden" name="viewer_id" value="<%= current_viewer.id %>">
+
       <!-- Label and input for title -->
       <div class="form-group">
         <label for="title" class="control-label">
@@ -37,12 +39,12 @@
       </div>
 
       <!-- Label and input for private -->
-      <div class="checkbox">
+      <!-- <div class="checkbox">
         <label for="private">
           <input type="checkbox" id="private" name="private" value="1" <%= "checked" if @clip.private %>>
           Private
         </label>
-      </div>
+      </div> -->
 
       <!-- Label and input for rating -->
       <div class="form-group">

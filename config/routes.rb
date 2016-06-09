@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   # Routes for the Theme resource:
   # CREATE
   get "/themes/new", :controller => "themes", :action => "new"

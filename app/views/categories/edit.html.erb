@@ -9,7 +9,7 @@
 <% end %>
 
 <div class="page-header">
-  <h3>Edit Category #<%= @category.id %></h3>
+  <h3>Edit Category: <%= @category.name %></h3>
 </div>
 
 <div class="row">
@@ -33,7 +33,9 @@
           Theme
         </label>
 
-        <input type="text" id="theme_id" name="theme_id" placeholder="Theme" class="form-control" value="<%= @category.theme_id %>">
+        <!-- <input type="text" id="theme_id" name="theme_id" placeholder="<%= @category.theme.title %>" class="form-control" value="<%= @category.theme_id %>"> -->
+
+        <%= select_tag(:theme_id, options_from_collection_for_select(Theme.all, :id, :title, @category.theme_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">

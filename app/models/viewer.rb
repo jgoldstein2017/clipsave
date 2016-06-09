@@ -4,7 +4,5 @@ class Viewer < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :favorites
-  # belongs_to :clip
   has_many :clips
 end
