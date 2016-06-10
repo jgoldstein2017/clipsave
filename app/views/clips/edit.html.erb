@@ -36,14 +36,6 @@
         <input type="text" id="title" name="title" placeholder="Title" class="form-control" value="<%= @clip.title %>">
       </div>
 
-      <!-- Label and input for private -->
-      <div class="checkbox">
-        <label for="private">
-          <input type="checkbox" id="private" name="private" value="1" <%= "checked" if @clip.private %>>
-          Private
-        </label>
-      </div>
-
       <!-- Label and input for rating -->
       <div class="form-group">
         <label for="rating" class="control-label">
